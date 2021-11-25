@@ -10,7 +10,7 @@ namespace CommonUtils.OraDbTb
 {
     public class MyOracleUtils
     {
-        public static OracleDataReader executeSqlStm(string psql, OracleConnection pConn)
+        public static OracleDataReader ExecuteSqlStm(string psql, OracleConnection pConn)
         {
             OracleDataReader res = null;
             try
@@ -28,7 +28,7 @@ namespace CommonUtils.OraDbTb
             return res;
         }
 
-        public static DataSet executeSqlStmDs(string psql, OracleConnection pConn)
+        public static DataSet ExecuteSqlStmDs(string psql, OracleConnection pConn)
         {
             DataSet ds = new DataSet();
             try
@@ -55,7 +55,7 @@ namespace CommonUtils.OraDbTb
 
             try
             {
-                dr = MyOracleUtils.executeSqlStm("SELECT SYSDATE FROM DUAL", ConnGl.Instance.Conn);
+                dr = MyOracleUtils.ExecuteSqlStm("SELECT SYSDATE FROM DUAL", ConnGl.Instance.Conn);
             }
             catch (Exception)
             {
@@ -71,7 +71,7 @@ namespace CommonUtils.OraDbTb
         /// <param name="spName"></param>
         /// <param name="oraCmd"></param>
         /// <param name="?"></param>
-        public static void execOracleSp(string spName,
+        public static void ExecOracleSp(string spName,
                                          OracleCommand oraCmd,
                                          OracleConnection pConn)
         {
@@ -84,7 +84,7 @@ namespace CommonUtils.OraDbTb
         }
 
 
-        public static void execOracleSp(string spName,
+        public static void ExecOracleSp(string spName,
                                         List<OracleParameter> pparams,
                                         OracleConnection pConn)
         {
@@ -103,34 +103,64 @@ namespace CommonUtils.OraDbTb
         }
 
         /// <summary>
-        /// Execute dml: update, insert, delete
+        /// Execute un Stored procedure (not Stored Function)
         /// </summary>
-        /// <param name="sqlDml"></param>
-        /// <param name="oraCmd"></param>
+        /// <param name="spName"></param>
+        /// <param name="pLstParam"></param>
         /// <param name="pConn"></param>
-        public static void execOracleStm(string sqlDml,
-                                          OracleConnection pConn)
+        public static OracleCommand ExecOracleSp2(string spName,
+                                                  List<OracleParameter> pLstParam,
+                                                  OracleConnection pConn)
         {
+            OracleCommand cmd = pConn.CreateCommand();
+            cmd.Connection = pConn;
 
-            try
+            // add parameters
+            foreach (var item in pLstParam)
             {
-                OracleCommand oraCmd = pConn.CreateCommand();
-                oraCmd.CommandType = CommandType.Text;
-                //            oraCmd.BindByName = true;
-                oraCmd.CommandText = sqlDml;
-                oraCmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                throw;
+                cmd.Parameters.Add(item);
             }
 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.BindByName = true;
+            cmd.CommandText = spName;
+            cmd.ExecuteNonQuery();
+            return cmd;
         }
 
-        public static object execOracleSf2(string spName, List<OracleParameter> pLstParam,
-                                   OracleDbType pReturnType,
-                                   OracleConnection pConn)
+        /// <summary>
+        /// Execute stored function (Sf)
+        /// </summary>
+        /// <param name="spName"></param>
+        /// <param name="pLstParam"></param>
+        /// <param name="pConn"></param>
+        /// <returns></returns>
+        public static object ExecOracleSf(string spName,
+                                          List<OracleParameter> pLstParam,
+                                          OracleConnection pConn)
+        {
+            object res = null;
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = pConn;
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            OracleParameter resultParam = new OracleParameter();
+            resultParam.Direction = ParameterDirection.ReturnValue;
+            resultParam.Size = 1000;
+            cmd.Parameters.Add(resultParam);
+            // add parameters
+            foreach (var item in pLstParam)
+            {
+                cmd.Parameters.Add(item);
+            }
+            cmd.ExecuteNonQuery();
+            res = resultParam.Value;
+            return res;
+        }
+
+        public static object ExecOracleSf2(string spName, List<OracleParameter> pLstParam,
+                                           OracleDbType pReturnType,
+                                           OracleConnection pConn)
         {
             object res = null;
             OracleCommand cmd = new OracleCommand();
@@ -149,9 +179,74 @@ namespace CommonUtils.OraDbTb
             return res;
         }
 
-        public static void execOracleSp(string p, OracleConnection oracleConnection)
+        /// <summary>
+        /// Execute dml: update, insert, delete
+        /// </summary>
+        /// <param name="sqlDml"></param>
+        /// <param name="oraCmd"></param>
+        /// <param name="pConn"></param>
+        public static void ExecOracleStm(string sqlDml,
+                                        OracleConnection pConn)
         {
-            throw new NotImplementedException();
+            try
+            {
+                OracleCommand oraCmd = pConn.CreateCommand();
+                // oraCmd.Connection = pConn;
+
+                oraCmd.CommandType = CommandType.Text;
+                //            oraCmd.BindByName = true;
+                oraCmd.CommandText = sqlDml;
+                oraCmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static OracleCommand ExecOracleStm2(string sqlDml,
+                                 List<OracleParameter> pparams,
+                                 OracleConnection pConn)
+        {
+
+            try
+            {
+                OracleCommand oraCmd = pConn.CreateCommand();
+                oraCmd.Connection = pConn;
+                foreach (var item in pparams)
+                {
+                    oraCmd.Parameters.Add(item);
+                }
+                oraCmd.CommandType = CommandType.Text;
+                //            oraCmd.BindByName = true;
+                oraCmd.CommandText = sqlDml;
+                oraCmd.ExecuteNonQuery();
+
+                return oraCmd;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static OracleParameter MakeParam()
+        {
+            OracleParameter res = new OracleParameter();
+
+            return res;
+        }
+
+        public static OracleParameter MakeParam(string paramName,
+                                                object pValue,
+                                                OracleDbType ptype,
+                                                ParameterDirection pdirParam)
+        {
+            OracleParameter res = new OracleParameter(paramName, ptype);
+            res.Value = pValue;
+            res.Direction = System.Data.ParameterDirection.Input;
+            return res;
         }
     }
 }

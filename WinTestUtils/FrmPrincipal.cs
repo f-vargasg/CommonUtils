@@ -30,7 +30,7 @@ namespace WinTestUtils
             try
             {
                 DataSet ds = null;
-                 ds = MyOracleUtils.executeSqlStmDs("Select 1 from dual", ConnGl.Instance.Conn);
+                 ds = MyOracleUtils.ExecuteSqlStmDs("Select 1 from dual", ConnGl.Instance.Conn);
                  MessageBox.Show("Connecion OKKKKK!!!!!!");
             }
             catch (Exception ex)
