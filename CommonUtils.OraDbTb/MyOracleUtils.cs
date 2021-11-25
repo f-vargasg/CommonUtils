@@ -128,6 +128,27 @@ namespace CommonUtils.OraDbTb
 
         }
 
+        public static object execOracleSf2(string spName, List<OracleParameter> pLstParam,
+                                   OracleDbType pReturnType,
+                                   OracleConnection pConn)
+        {
+            object res = null;
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = pConn;
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            OracleParameter resultParam = new OracleParameter("Return_value", pReturnType, ParameterDirection.ReturnValue);
+            cmd.Parameters.Add(resultParam);
+            // add parameters
+            foreach (var item in pLstParam)
+            {
+                cmd.Parameters.Add(item);
+            }
+            cmd.ExecuteNonQuery();
+            res = resultParam.Value;
+            return res;
+        }
+
         public static void execOracleSp(string p, OracleConnection oracleConnection)
         {
             throw new NotImplementedException();
