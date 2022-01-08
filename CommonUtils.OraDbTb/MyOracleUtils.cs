@@ -239,13 +239,22 @@ namespace CommonUtils.OraDbTb
         }
 
         public static OracleParameter MakeParam(string paramName,
+                                        OracleDbType ptype,
+                                        ParameterDirection pdirParam)
+        {
+            OracleParameter res = new OracleParameter(paramName, ptype);
+            res.Direction = pdirParam;
+            return res;
+        }
+
+        public static OracleParameter MakeParam(string paramName,
                                                 object pValue,
                                                 OracleDbType ptype,
                                                 ParameterDirection pdirParam)
         {
             OracleParameter res = new OracleParameter(paramName, ptype);
             res.Value = pValue;
-            res.Direction = System.Data.ParameterDirection.Input;
+            res.Direction = pdirParam
             return res;
         }
     }
