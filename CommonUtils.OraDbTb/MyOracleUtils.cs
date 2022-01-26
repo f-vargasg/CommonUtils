@@ -254,7 +254,7 @@ namespace CommonUtils.OraDbTb
         {
             OracleParameter res = new OracleParameter(paramName, ptype);
             res.Value = pValue;
-            res.Direction = pdirParam
+            res.Direction = pdirParam;
             return res;
         }
     }
