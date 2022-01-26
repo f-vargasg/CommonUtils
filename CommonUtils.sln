@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.OraDbTb", "CommonUtils.OraDbTb\CommonUtils.OraDbTb.csproj", "{C3219A8C-0AB2-4EC0-B3B8-BE1E19B2E2D3}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTestUtils", "WinTestUtils\WinTestUtils.csproj", "{DE2CD81D-51AC-41EC-A4BA-88EE066294F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Log4NetTb", "CommonUtils.Log4NetTb\CommonUtils.Log4NetTb.csproj", "{51590D48-E8C9-4FAB-8F9C-E8286E8F409D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.WinComp.Tb", "CommonUtils.WinComp.Tb\CommonUtils.WinComp.Tb.csproj", "{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{51590D48-E8C9-4FAB-8F9C-E8286E8F409D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51590D48-E8C9-4FAB-8F9C-E8286E8F409D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51590D48-E8C9-4FAB-8F9C-E8286E8F409D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26F73812-42E2-4B92-85C6-98CEBC7F63D4}
 	EndGlobalSection
 EndGlobal
