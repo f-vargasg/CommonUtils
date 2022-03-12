@@ -1,4 +1,4 @@
-﻿namespace CommonUtils.WinComp.Tb
+﻿namespace CommonUtils.WinCompTb
 {
     partial class UCSelectedFile
     {

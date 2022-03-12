@@ -94,9 +94,9 @@
       <Project>{c3219a8c-0ab2-4ec0-b3b8-be1e19b2e2d3}</Project>
       <Name>CommonUtils.OraDbTb</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CommonUtils.WinComp.Tb\CommonUtils.WinComp.Tb.csproj">
+    <ProjectReference Include="..\CommonUtils.WinComp.Tb\CommonUtils.WinCompTb.csproj">
       <Project>{88e1e8bf-34be-4dd4-be81-3c37e12fb366}</Project>
-      <Name>CommonUtils.WinComp.Tb</Name>
+      <Name>CommonUtils.WinCompTb</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

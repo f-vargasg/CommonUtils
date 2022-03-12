@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CommonUtils.WinComp.Tb</RootNamespace>
+    <RootNamespace>CommonUtils.WinCompTb</RootNamespace>
     <AssemblyName>CommonUtils.WinComp.Tb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

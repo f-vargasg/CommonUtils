@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTestUtils", "WinTestUtil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Log4NetTb", "CommonUtils.Log4NetTb\CommonUtils.Log4NetTb.csproj", "{51590D48-E8C9-4FAB-8F9C-E8286E8F409D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.WinComp.Tb", "CommonUtils.WinComp.Tb\CommonUtils.WinComp.Tb.csproj", "{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.WinCompTb", "CommonUtils.WinComp.Tb\CommonUtils.WinCompTb.csproj", "{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

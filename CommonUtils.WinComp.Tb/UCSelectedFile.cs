@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CommonUtils.WinComp.Tb
+namespace CommonUtils.WinCompTb
 {
     public partial class UCSelectedFile : UserControl
     {

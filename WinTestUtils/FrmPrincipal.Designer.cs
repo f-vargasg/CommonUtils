@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.butTest = new System.Windows.Forms.Button();
             this.butTestLog4net = new System.Windows.Forms.Button();
-            this.ucLoadFile1 = new CommonUtils.WinComp.Tb.UCSelectedFile();
+            this.ucLoadFile1 = new CommonUtils.WinCompTb.UCSelectedFile();
             this.SuspendLayout();
             // 
             // butTest
@@ -83,7 +83,7 @@
 
         private System.Windows.Forms.Button butTest;
         private System.Windows.Forms.Button butTestLog4net;
-        private CommonUtils.WinComp.Tb.UCSelectedFile ucLoadFile1;
+        private CommonUtils.WinCompTb.UCSelectedFile ucLoadFile1;
     }
 }
 
