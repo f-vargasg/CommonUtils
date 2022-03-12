@@ -7,7 +7,7 @@
     <ProjectGuid>{88E1E8BF-34BE-4DD4-BE81-3C37E12FB366}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>CommonUtils.WinCompTb</RootNamespace>
-    <AssemblyName>CommonUtils.WinComp.Tb</AssemblyName>
+    <AssemblyName>CommonUtils.WinCompTb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
