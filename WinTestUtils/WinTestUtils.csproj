@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinTestUtils</RootNamespace>
     <AssemblyName>WinTestUtils</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -91,6 +93,10 @@
     <ProjectReference Include="..\CommonUtils.OraDbTb\CommonUtils.OraDbTb.csproj">
       <Project>{c3219a8c-0ab2-4ec0-b3b8-be1e19b2e2d3}</Project>
       <Name>CommonUtils.OraDbTb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonUtils.WinComp.Tb\CommonUtils.WinComp.Tb.csproj">
+      <Project>{88e1e8bf-34be-4dd4-be81-3c37e12fb366}</Project>
+      <Name>CommonUtils.WinComp.Tb</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

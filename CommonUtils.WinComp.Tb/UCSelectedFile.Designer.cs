@@ -1,6 +1,6 @@
 ﻿namespace CommonUtils.WinComp.Tb
 {
-    partial class UCLoadFile
+    partial class UCSelectedFile
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -36,15 +36,15 @@
             // lblPathFname
             // 
             this.lblPathFname.AutoSize = true;
-            this.lblPathFname.Location = new System.Drawing.Point(28, 25);
+            this.lblPathFname.Location = new System.Drawing.Point(25, 28);
             this.lblPathFname.Name = "lblPathFname";
-            this.lblPathFname.Size = new System.Drawing.Size(70, 13);
+            this.lblPathFname.Size = new System.Drawing.Size(91, 13);
             this.lblPathFname.TabIndex = 17;
-            this.lblPathFname.Text = "Archivo Subir";
+            this.lblPathFname.Text = "Archivo Procesar:";
             // 
             // butBrowseFiles
             // 
-            this.butBrowseFiles.Location = new System.Drawing.Point(436, 72);
+            this.butBrowseFiles.Location = new System.Drawing.Point(323, 70);
             this.butBrowseFiles.Name = "butBrowseFiles";
             this.butBrowseFiles.Size = new System.Drawing.Size(118, 28);
             this.butBrowseFiles.TabIndex = 16;
@@ -55,18 +55,18 @@
             // 
             this.txtPathFname.Location = new System.Drawing.Point(19, 44);
             this.txtPathFname.Name = "txtPathFname";
-            this.txtPathFname.Size = new System.Drawing.Size(550, 20);
+            this.txtPathFname.Size = new System.Drawing.Size(422, 20);
             this.txtPathFname.TabIndex = 15;
             // 
-            // UCLoadFile
+            // UCSelectedFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPathFname);
             this.Controls.Add(this.butBrowseFiles);
             this.Controls.Add(this.txtPathFname);
-            this.Name = "UCLoadFile";
-            this.Size = new System.Drawing.Size(613, 140);
+            this.Name = "UCSelectedFile";
+            this.Size = new System.Drawing.Size(474, 140);
             this.ResumeLayout(false);
             this.PerformLayout();
 

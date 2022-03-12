@@ -8,9 +8,10 @@
     <OutputType>Library</OutputType>
     <RootNamespace>CommonUtils.WinComp.Tb</RootNamespace>
     <AssemblyName>CommonUtils.WinComp.Tb</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UCLoadFile.cs">
+    <Compile Include="UCSelectedFile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCLoadFile.Designer.cs">
-      <DependentUpon>UCLoadFile.cs</DependentUpon>
+    <Compile Include="UCSelectedFile.Designer.cs">
+      <DependentUpon>UCSelectedFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UCLoadFile.resx">
-      <DependentUpon>UCLoadFile.cs</DependentUpon>
+    <EmbeddedResource Include="UCSelectedFile.resx">
+      <DependentUpon>UCSelectedFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
