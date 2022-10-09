@@ -9,14 +9,20 @@ namespace CommonUtils.StringTb
 {
     public static class MyStringUtils
     {
-        public static string entreComas(string ps)
+
+        public static string EntreChar (string ps, char pch)
         {
-            return "'" + ps + "'";
+            return pch.ToString() + ps + pch.ToString();
         }
 
-        public static string entreComas(string ps, bool quoted)
+        public static string EntreComas(string ps)
         {
-            string res = "'" + ps + "'";
+            return EntreChar(ps, '\'');
+        }
+
+        public static string EntreComas(string ps, bool quoted)
+        {
+            string res = EntreComas (ps, quoted);
             if (quoted)
             {
                 res = "q'[" + ps + "]'";
@@ -34,7 +40,7 @@ namespace CommonUtils.StringTb
         }
 
 
-        public static string fmtDateForDb(DateTime pval)
+        public static string FmtDateForDb(DateTime pval)
         {
             string res = string.Empty;
 
@@ -43,7 +49,7 @@ namespace CommonUtils.StringTb
             return res;
         }
 
-        public static string fmtDecimalForDb(Decimal pval)
+        public static string FmtDecimalForDb(Decimal pval)
         {
             string res = string.Empty;
 
@@ -52,7 +58,7 @@ namespace CommonUtils.StringTb
             return res;
         }
 
-        public static string fmtDoubleForDb(Double pval)
+        public static string FmtDoubleForDb(Double pval)
         {
             string res = string.Empty;
 
@@ -61,7 +67,7 @@ namespace CommonUtils.StringTb
             return res;
         }
 
-        public static List<String> createListFromStrSepBySemiColon(string strSepByChar, char pch)
+        public static List<String> CreateListFromStrSepBySemiColon(string strSepByChar, char pch)
         {
             String str = null;
             String[] strArr = null;

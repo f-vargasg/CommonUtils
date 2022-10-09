@@ -63,7 +63,7 @@ namespace CommonUtils.DateTb
             return res;
         }
 
-        public static string toChar(Nullable<DateTime> pDate)
+        public static string ToChar(Nullable<DateTime> pDate)
         {
             string res;
 
@@ -78,7 +78,7 @@ namespace CommonUtils.DateTb
             return res;
         }
 
-        public static string toChar(DateTime pDate)
+        public static string ToChar(DateTime pDate)
         {
             string res;
 
@@ -88,7 +88,7 @@ namespace CommonUtils.DateTb
             return res;
         }
 
-        public static string toDate(DateTime pDate)
+        public static string ToDateFmtStr(DateTime pDate)
         {
             string res;
 
@@ -98,7 +98,17 @@ namespace CommonUtils.DateTb
             return res;
         }
 
-        public static DateTime obtUltimoDiaMes(int pmes, int pyear)
+        public static string ToDateFmtStr(DateTime pDate, string pFmtDate)
+        {
+            string res;
+
+
+            res = "to_date ('" + pDate.ToString(pFmtDate) + "', 'DD/MM/RRRR')";
+
+            return res;
+        }
+
+        public static DateTime ObtUltimoDiaMes(int pmes, int pyear)
         {
             DateTime res;
 
