@@ -9,6 +9,7 @@ namespace CommonUtils.StringTb
 {
     public static class MyStringUtils
     {
+        public const string FMT_DATE_TRUNC   = "dd/MM/yyyy";
 
         public static string EntreChar (string ps, char pch)
         {
@@ -44,7 +45,7 @@ namespace CommonUtils.StringTb
         {
             string res = string.Empty;
 
-            res = string.Format("to_date ('{0:dd/MM/yyyy}', 'DD/MM/RRRR')", pval);
+            res = string.Format("to_date ('{0:" + FMT_DATE_TRUNC +"}', 'DD/MM/RRRR')", pval);
 
             return res;
         }
@@ -85,5 +86,6 @@ namespace CommonUtils.StringTb
             }
             return lstStr;
         }
+
     }
 }
