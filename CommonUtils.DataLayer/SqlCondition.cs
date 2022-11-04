@@ -64,5 +64,13 @@ namespace CommonUtils.DataLayer
         }
 
 
+        public static string AddConditionToSql(string psql,
+                                               string pCond)
+        {
+            string res = psql + (pCond.Length > 0 ? " WHERE " + pCond : string.Empty);
+
+            return res ;
+        }
+
     }
 }
