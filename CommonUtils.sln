@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.DataLayer", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.DataGrid", "CommonUtils.DataGrid\CommonUtils.DataGrid.csproj", "{0EE5292E-1A43-444D-8C0C-E2D28FB92D8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.ExceptionsTb", "CommonUtils.ExceptionsTb\CommonUtils.ExceptionsTb.csproj", "{C8CEB59A-EAD2-490A-8C27-1B92713DDE02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{0EE5292E-1A43-444D-8C0C-E2D28FB92D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EE5292E-1A43-444D-8C0C-E2D28FB92D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EE5292E-1A43-444D-8C0C-E2D28FB92D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CEB59A-EAD2-490A-8C27-1B92713DDE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CEB59A-EAD2-490A-8C27-1B92713DDE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CEB59A-EAD2-490A-8C27-1B92713DDE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CEB59A-EAD2-490A-8C27-1B92713DDE02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
