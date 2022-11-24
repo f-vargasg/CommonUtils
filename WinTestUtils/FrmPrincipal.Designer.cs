@@ -32,6 +32,7 @@
             this.butTest = new System.Windows.Forms.Button();
             this.butTestLog4net = new System.Windows.Forms.Button();
             this.ucLoadFile1 = new CommonUtils.WinCompTb.UCSelectedFile();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // butTest
@@ -57,16 +58,25 @@
             // ucLoadFile1
             // 
             this.ucLoadFile1.Location = new System.Drawing.Point(22, 142);
-            this.ucLoadFile1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucLoadFile1.Margin = new System.Windows.Forms.Padding(4);
             this.ucLoadFile1.Name = "ucLoadFile1";
             this.ucLoadFile1.Size = new System.Drawing.Size(608, 140);
             this.ucLoadFile1.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(456, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 3;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 402);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.ucLoadFile1);
             this.Controls.Add(this.butTestLog4net);
             this.Controls.Add(this.butTest);
@@ -84,6 +94,7 @@
         private System.Windows.Forms.Button butTest;
         private System.Windows.Forms.Button butTestLog4net;
         private CommonUtils.WinCompTb.UCSelectedFile ucLoadFile1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
