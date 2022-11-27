@@ -45,5 +45,27 @@ namespace CommonUtils.DataGrid
             this.DgrdView.DataSource = source;
             HideColumns(plstColsToHide);
         }
+
+        public void AdjustColums()
+        {
+            for (int i = 0; i < this.DgrdView.Columns.Count; i++)
+            {
+                if (i == this.DgrdView.Columns.Count)
+                {
+                    this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                else
+                {
+                    this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                }
+            }
+            for (int i = 0; i < this.DgrdView.Columns.Count; i++)
+            {
+                int colw = this.DgrdView.Columns[i].Width;
+                this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                this.DgrdView.Columns[i].Width = colw;
+            }
+        }
+
     }
 }
