@@ -15,7 +15,7 @@ namespace WinTestUtils
 {
     /// <summary>
     /// Al archivo del log4net.xml en la propiedad "Copiar en el Directorio Salida"  poner la opción 
-    /// "Copiar Siempre"
+    /// "Copiar Siempre". Si está opción no se pone da un evento
     /// </summary>
     public partial class FrmPrincipal : Form
     {
