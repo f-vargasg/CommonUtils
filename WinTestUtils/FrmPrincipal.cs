@@ -13,6 +13,10 @@ using System.Windows.Forms;
 
 namespace WinTestUtils
 {
+    /// <summary>
+    /// Al archivo del log4net.xml en la propiedad "Copiar en el Directorio Salida"  poner la opción 
+    /// "Copiar Siempre"
+    /// </summary>
     public partial class FrmPrincipal : Form
     {
         public FrmPrincipal()
@@ -26,7 +30,7 @@ namespace WinTestUtils
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void butTest_Click(object sender, EventArgs e)
+        private void ButTest_Click(object sender, EventArgs e)
         {
             try
             {
@@ -40,7 +44,7 @@ namespace WinTestUtils
             }
         }
 
-        private void butTestLog4net_Click(object sender, EventArgs e)
+        private void ButTestLog4net_Click(object sender, EventArgs e)
         {
             Log4NetManager.WriteLog("Debug1", LogTypes.DebugLog);
         }
@@ -84,8 +88,7 @@ namespace WinTestUtils
             }
             return res;
         }
-
-        private void butTestFunction_Click(object sender, EventArgs e)
+        private void ButTestFunction_Click(object sender, EventArgs e)
         {
             try
             {

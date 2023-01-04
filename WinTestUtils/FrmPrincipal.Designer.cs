@@ -45,7 +45,7 @@
             this.butTest.TabIndex = 0;
             this.butTest.Text = "Test Conn";
             this.butTest.UseVisualStyleBackColor = true;
-            this.butTest.Click += new System.EventHandler(this.butTest_Click);
+            this.butTest.Click += new System.EventHandler(this.ButTest_Click);
             // 
             // butTestLog4net
             // 
@@ -55,7 +55,7 @@
             this.butTestLog4net.TabIndex = 1;
             this.butTestLog4net.Text = "Test Log4Net";
             this.butTestLog4net.UseVisualStyleBackColor = true;
-            this.butTestLog4net.Click += new System.EventHandler(this.butTestLog4net_Click);
+            this.butTestLog4net.Click += new System.EventHandler(this.ButTestLog4net_Click);
             // 
             // ucLoadFile1
             // 
@@ -81,7 +81,7 @@
             this.butTestFunction.TabIndex = 4;
             this.butTestFunction.Text = "Test Function SP";
             this.butTestFunction.UseVisualStyleBackColor = true;
-            this.butTestFunction.Click += new System.EventHandler(this.butTestFunction_Click);
+            this.butTestFunction.Click += new System.EventHandler(this.ButTestFunction_Click);
             // 
             // txtOutPut
             // 
