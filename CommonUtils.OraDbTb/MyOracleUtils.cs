@@ -168,6 +168,11 @@ namespace CommonUtils.OraDbTb
             cmd.CommandText = spName;
             cmd.CommandType = CommandType.StoredProcedure;
             OracleParameter resultParam = new OracleParameter("Return_value", pReturnType, ParameterDirection.ReturnValue);
+            // los valores varchar2, ocupan un size, sino no funciona
+            if (pReturnType == OracleDbType.Varchar2)
+            {
+                resultParam.Size = 500;
+            }
             cmd.Parameters.Add(resultParam);
             // add parameters
             foreach (var item in pLstParam)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -14,10 +15,19 @@ namespace CommonUtils.DataGrid
 
         public DataGridView DgrdView { get; set; }
 
-        public DataGridTools() { }
+        public string FontName { get; set; }
+        public float FontSize { get; set; }
+
+        public DataGridTools() 
+        {
+            this.FontName = "Arial";
+            this.FontSize = 14f;
+        }
 
         public DataGridTools(DataGridView pDgrdV)
         {
+            this.FontName = "Arial";
+            this.FontSize = 14f;
             DgrdView = pDgrdV;
         }
 
@@ -64,6 +74,16 @@ namespace CommonUtils.DataGrid
                 int colw = this.DgrdView.Columns[i].Width;
                 this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 this.DgrdView.Columns[i].Width = colw;
+            }
+        }
+
+        public void UpdateFont()
+        {
+            //Change cell font
+            foreach (DataGridViewColumn c in DgrdView.Columns)
+            {
+                // c.DefaultCellStyle.Font = new Font("Arial", 24F, GraphicsUnit.Pixel);
+                c.DefaultCellStyle.Font = new Font(this.FontName, this.FontSize, GraphicsUnit.Pixel);
             }
         }
 

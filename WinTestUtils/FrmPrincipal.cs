@@ -1,5 +1,6 @@
 ﻿using CommonUtils.Log4NetTb;
 using CommonUtils.OraDbTb;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,59 @@ namespace WinTestUtils
         private void butTestLog4net_Click(object sender, EventArgs e)
         {
             Log4NetManager.WriteLog("Debug1", LogTypes.DebugLog);
+        }
+
+        public string ObtenerCodigoInterCodigoInterno(int pCodCatEnte,
+                                                       string pNomTabla,
+                                                       string pDesValorExt,
+                                                       string pIndValidaExiste)
+        {
+            string res = string.Empty;
+            try
+            {
+                OracleParameter param;
+                List<OracleParameter> lstParams = new List<OracleParameter>();
+                param = MyOracleUtils.MakeParam("PCOD_CATENTE_N", pCodCatEnte, OracleDbType.Int32, ParameterDirection.Input);
+                lstParams.Add(param);
+
+                param = MyOracleUtils.MakeParam("PNOM_TABLA", pNomTabla, OracleDbType.Varchar2,ParameterDirection.Input);
+                param.Size = 500;
+                lstParams.Add(param);
+
+                param = MyOracleUtils.MakeParam("PDES_VALOREXT", pDesValorExt, OracleDbType.Varchar2,ParameterDirection.Input);
+                param.Size = 500;
+                lstParams.Add(param);
+
+                param = MyOracleUtils.MakeParam("pind_validaExist", pIndValidaExiste, OracleDbType.Varchar2,ParameterDirection.Input);
+                param.Size = 500;
+                lstParams.Add(param);
+
+                Console.WriteLine(lstParams.Count.ToString());
+
+                object obj = MyOracleUtils.ExecOracleSf2("ge_pambhomologa.obtener_cod_INTERNO", lstParams, OracleDbType.Varchar2, ConnGl.Instance.Conn);
+
+                res = Convert.ToString(obj);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return res;
+        }
+
+        private void butTestFunction_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string res = ObtenerCodigoInterCodigoInterno(2, "GE_AMBMONEDA", "CRC", "N");
+                txtOutPut.Text = res;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

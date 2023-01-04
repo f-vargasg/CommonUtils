@@ -33,6 +33,8 @@
             this.butTestLog4net = new System.Windows.Forms.Button();
             this.ucLoadFile1 = new CommonUtils.WinCompTb.UCSelectedFile();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.butTestFunction = new System.Windows.Forms.Button();
+            this.txtOutPut = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // butTest
@@ -66,16 +68,36 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(456, 56);
+            this.comboBox1.Location = new System.Drawing.Point(411, 172);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 37);
             this.comboBox1.TabIndex = 3;
+            // 
+            // butTestFunction
+            // 
+            this.butTestFunction.Location = new System.Drawing.Point(411, 29);
+            this.butTestFunction.Name = "butTestFunction";
+            this.butTestFunction.Size = new System.Drawing.Size(131, 77);
+            this.butTestFunction.TabIndex = 4;
+            this.butTestFunction.Text = "Test Function SP";
+            this.butTestFunction.UseVisualStyleBackColor = true;
+            this.butTestFunction.Click += new System.EventHandler(this.butTestFunction_Click);
+            // 
+            // txtOutPut
+            // 
+            this.txtOutPut.Location = new System.Drawing.Point(71, 346);
+            this.txtOutPut.Multiline = true;
+            this.txtOutPut.Name = "txtOutPut";
+            this.txtOutPut.Size = new System.Drawing.Size(619, 113);
+            this.txtOutPut.TabIndex = 5;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 402);
+            this.ClientSize = new System.Drawing.Size(760, 476);
+            this.Controls.Add(this.txtOutPut);
+            this.Controls.Add(this.butTestFunction);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.ucLoadFile1);
             this.Controls.Add(this.butTestLog4net);
@@ -86,6 +108,7 @@
             this.Name = "FrmPrincipal";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +118,8 @@
         private System.Windows.Forms.Button butTestLog4net;
         private CommonUtils.WinCompTb.UCSelectedFile ucLoadFile1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button butTestFunction;
+        private System.Windows.Forms.TextBox txtOutPut;
     }
 }
 

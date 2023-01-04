@@ -38,7 +38,6 @@ namespace CommonUtils.OraDbTb
 
                 throw ex;
             }
-
         }
 
         // implementing singleton class
