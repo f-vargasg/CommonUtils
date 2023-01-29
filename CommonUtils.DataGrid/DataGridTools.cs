@@ -46,7 +46,12 @@ namespace CommonUtils.DataGrid
             var source = new BindingSource(bindingList, null);
             this.DgrdView.DataSource = source;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T">Tipo</typeparam>
+        /// <param name="list">Lista de tipo</param>
+        /// <param name="plstColsToHide">Columnas a esconder del grid</param>
         public void FillDataGrid<T>(List<T> list,
                                     string plstColsToHide)
         {

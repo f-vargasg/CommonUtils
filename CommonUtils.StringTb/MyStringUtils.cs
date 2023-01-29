@@ -87,5 +87,36 @@ namespace CommonUtils.StringTb
             return lstStr;
         }
 
+        public static string AddCondition(string pStr, string pCondition, string pBoolOperator) 
+        {
+            string res = string.Empty;
+            try
+            {
+                res = pStr + (pStr.Length > 0 ? " " + pBoolOperator.Trim() + " " : string.Empty) + pCondition;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return res;
+        }
+
+        public static string AddWhereCondition(string pCondition)
+        {
+            string res = string.Empty;
+            try
+            {
+                res = (pCondition.Length > 0 ? " WHERE " : string.Empty) + pCondition;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return res;
+        }
+
+
     }
 }
