@@ -27,7 +27,6 @@ namespace CommonUtils.OraDbTb
             }
             return res;
         }
-
         public static DataSet ExecuteSqlStmDs(string psql, OracleConnection pConn)
         {
             DataSet ds = new DataSet();
@@ -45,8 +44,6 @@ namespace CommonUtils.OraDbTb
             }
             return ds;
         }
-
-
         public static bool ConnectOk()
         {
             bool res = true;
@@ -64,7 +61,6 @@ namespace CommonUtils.OraDbTb
 
             return res;
         }
-
         /// <summary>
         /// Execute oracle sp
         /// </summary>
@@ -82,8 +78,6 @@ namespace CommonUtils.OraDbTb
             oraCmd.CommandText = spName;
             oraCmd.ExecuteNonQuery();
         }
-
-
         public static void ExecOracleSp(string spName,
                                         List<OracleParameter> pparams,
                                         OracleConnection pConn)
@@ -101,7 +95,6 @@ namespace CommonUtils.OraDbTb
             oraCmd.CommandText = spName;
             oraCmd.ExecuteNonQuery();
         }
-
         /// <summary>
         /// Execute un Stored procedure (not Stored Function)
         /// </summary>
@@ -127,7 +120,6 @@ namespace CommonUtils.OraDbTb
             cmd.ExecuteNonQuery();
             return cmd;
         }
-
         /// <summary>
         /// Execute stored function (Sf)
         /// </summary>
