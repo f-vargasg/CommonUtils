@@ -31,6 +31,25 @@ namespace CommonUtils.DataGrid
             DgrdView = pDgrdV;
         }
 
+
+        public object GetCurrentCellValue(string pColName)
+        {
+            object cellValue;
+            try
+            {
+                int selectedrowindex = DgrdView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = DgrdView.Rows[selectedrowindex];
+                cellValue = selectedRow.Cells[pColName].Value;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return cellValue;
+        }
+
         public void HideColumns(string colToHide)
         {
             string[] strings = colToHide.Split(',');
