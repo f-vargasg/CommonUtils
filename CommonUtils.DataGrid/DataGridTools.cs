@@ -82,16 +82,20 @@ namespace CommonUtils.DataGrid
 
         public void AdjustColums()
         {
+            int lastColVisible = 0;
             for (int i = 0; i < this.DgrdView.Columns.Count; i++)
             {
-                if (i == this.DgrdView.Columns.Count)
+                // if (i == this.DgrdView.Columns.Count && DgrdView.Columns[i].Visible)
+                if (DgrdView.Columns[i].Visible)
                 {
-                    this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    lastColVisible = i;
+                    // this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 else
                 {
                     this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 }
+                this.DgrdView.Columns[lastColVisible].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
             for (int i = 0; i < this.DgrdView.Columns.Count; i++)
             {
