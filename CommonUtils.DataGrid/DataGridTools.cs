@@ -91,12 +91,9 @@ namespace CommonUtils.DataGrid
                     lastColVisible = i;
                     // this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                else
-                {
-                    this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                }
-                this.DgrdView.Columns[lastColVisible].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                this.DgrdView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
+            this.DgrdView.Columns[lastColVisible].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             for (int i = 0; i < this.DgrdView.Columns.Count; i++)
             {
                 int colw = this.DgrdView.Columns[i].Width;

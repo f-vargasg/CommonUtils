@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.DataGrid", "Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Helpers", "CommonUtils.Helpers\CommonUtils.Helpers.csproj", "{1CACA045-8E58-4087-944A-C246A57CC41C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.ClassTb", "CommonUtils.ClassTb\CommonUtils.ClassTb.csproj", "{B38DEA0C-6262-4459-B7CC-C56BA8671411}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{1CACA045-8E58-4087-944A-C246A57CC41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CACA045-8E58-4087-944A-C246A57CC41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CACA045-8E58-4087-944A-C246A57CC41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38DEA0C-6262-4459-B7CC-C56BA8671411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38DEA0C-6262-4459-B7CC-C56BA8671411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38DEA0C-6262-4459-B7CC-C56BA8671411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38DEA0C-6262-4459-B7CC-C56BA8671411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
