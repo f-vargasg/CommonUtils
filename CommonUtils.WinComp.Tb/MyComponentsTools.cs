@@ -20,6 +20,10 @@ namespace CommonUtils.WinCompTb
                     {
                         control.Enabled = pDispCtrls;
                     }
+                    else if (control is ComboBox)
+                    {
+                        control.Enabled = pDispCtrls;
+                    }
 
                 }
             }
