@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonUtils.ClassTb">
+      <HintPath>..\CommonUtils.ClassTb\bin\Release\CommonUtils.ClassTb.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnGridBE.cs" />
+    <Compile Include="FrmPickList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPickList.Designer.cs">
+      <DependentUpon>FrmPickList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyComponentsTools.cs" />
     <Compile Include="UCSelectedFile.cs">
       <SubType>UserControl</SubType>
@@ -54,9 +64,19 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmPickList.resx" />
     <EmbeddedResource Include="UCSelectedFile.resx">
       <DependentUpon>UCSelectedFile.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils.DataGrid\CommonUtils.DataGrid.csproj">
+      <Project>{0EE5292E-1A43-444D-8C0C-E2D28FB92D8B}</Project>
+      <Name>CommonUtils.DataGrid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
