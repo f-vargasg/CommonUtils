@@ -18,7 +18,7 @@ namespace CommonUtils.DataGrid
         public string FontName { get; set; }
         public float FontSize { get; set; }
 
-        public DataGridTools() 
+        public DataGridTools()
         {
             this.FontName = "Arial";
             this.FontSize = 14f;
@@ -52,11 +52,14 @@ namespace CommonUtils.DataGrid
 
         public void HideColumns(string colToHide)
         {
-            string[] strings = colToHide.Split(',');
-            foreach (var colStr in strings)
+            if (colToHide != null)
             {
-                int ind = Convert.ToInt32(colStr);
-                this.DgrdView.Columns[ind].Visible = false;
+                string[] strings = colToHide.Split(',');
+                foreach (var colStr in strings)
+                {
+                    int ind = Convert.ToInt32(colStr);
+                    this.DgrdView.Columns[ind].Visible = false;
+                }
             }
         }
         public void FillDataGrid<T>(List<T> list)
