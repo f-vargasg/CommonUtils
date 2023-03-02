@@ -37,7 +37,8 @@ namespace CommonUtils.DataGrid
             object cellValue;
             try
             {
-                int selectedrowindex = DgrdView.SelectedCells[0].RowIndex;
+                // int selectedrowindex = DgrdView.SelectedCells[0].RowIndex;
+                int selectedrowindex = DgrdView.CurrentCell.RowIndex;
                 DataGridViewRow selectedRow = DgrdView.Rows[selectedrowindex];
                 cellValue = selectedRow.Cells[pColName].Value;
             }
