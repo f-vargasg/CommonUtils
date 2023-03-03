@@ -49,13 +49,17 @@ namespace CommonUtils.WinCompTb
         private void FrmPickList_Load(object sender, EventArgs e)
         {
             DataGridTools.FillDataGrid<T>(LstData);
+            DataGridTools.HideColumns(ColumnsToHide);
 
             if (columnGridCmb.Items.Count <= 0)
             {
                 foreach (var item in LstCols)
                 {
-                    DataGridTools.DgrdView.Columns[item.NomFisico].HeaderText = item.LblColumn;
-                    columnGridCmb.Items.Add(item);
+                    if (DataGridTools.DgrdView.Columns[item.NomFisico].Visible)
+                    {
+                        DataGridTools.DgrdView.Columns[item.NomFisico].HeaderText = item.LblColumn;
+                        columnGridCmb.Items.Add(item);
+                    }
                 }
                 if (columnGridCmb.Items.Count > 0)
                 {
@@ -63,7 +67,7 @@ namespace CommonUtils.WinCompTb
                 }
             }
            
-            DataGridTools.HideColumns(ColumnsToHide);
+
             DataGridTools.AdjustColums();
         }
 
@@ -79,50 +83,11 @@ namespace CommonUtils.WinCompTb
             DataPick = string.Empty;
             this.DialogResult = DialogResult.Cancel;
         }
-        /*
-        public List<T> Filter(List<T> collection,
-                              string property,
-                              string filterValue)
-        {
-            var filteredCollection = new List<T>();
-            foreach (var item in collection)
-            {
-                // To check multiple properties use,
-                // item.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
 
-                var propertyInfo =
-                    item.GetType()
-                        .GetProperty(property, BindingFlags.Public | BindingFlags.Instance);
-                if (propertyInfo == null)
-                    throw new NotSupportedException("property given does not exists");
-
-                object propertyValue = propertyInfo.GetValue(item, null);
-                string propertyValueCmp = Convert.ToString(propertyValue);
-                //if (propertyValueCmp == filterValue)
-                if (propertyValueCmp.Contains(filterValue))
-                {
-                    filteredCollection.Add(item);
-                }
-            }
-
-            return filteredCollection;
-        }
-        */
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             ColumnGridBE columnGridBE;
             string expresionFilter;
-            /*
-            ColumnGridBE columnGridBE = columnGridCmb.SelectedItem as ColumnGridBE;
-            if (columnGridBE != null)
-            {
-                expresionFilter = $"{columnGridBE.NomFisico} LIKE '%{txtToSearch.Text}%'";
-
-                DataTable dt = (DataGridTools.DgrdView.DataSource as DataTable);
-
-                // (DataGridTools.DgrdView.DataSource as DataTable).DefaultView.RowFilter = expresionFilter;
-            }
-            */
 
             if (toSearchTxt.Text == string.Empty)
             {
